@@ -1,10 +1,12 @@
 class Card {
   rank: string;
   suit:string;
+  suitName: string;
 
-  constructor(rank:string, suit:string) {
+  constructor(rank:string, suitName:string, suit:string) {
     this.rank = rank;
     this.suit = suit
+    this.suitName = suitName
   }
 }
 

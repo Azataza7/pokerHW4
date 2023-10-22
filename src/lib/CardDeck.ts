@@ -10,13 +10,32 @@ class CardDeck {
 
     suitsKey.forEach((suit) => {
       ranks.forEach((rank) => {
-        this.deckOfCards.push(new Card(rank, suit));
+        this.deckOfCards.push(new Card(rank, suit, suits[suit]));
       });
     });
   }
 
+  getCard(): Card {
+    if (this.deckOfCards.length === 0) {
+      return
+    }
 
+    const randomIndex = Math.floor(Math.random() * this.deckOfCards.length);
+    return this.deckOfCards.splice(randomIndex, 1)[0];
+  }
+
+  getCards(howMany: number): Card[] {
+    const stackOfCard: Card[] = [];
+
+    for (let i = 0; i < howMany; i++) {
+      const card = this.getCard();
+      if (card) {
+        stackOfCard.push(card);
+      }
+    }
+
+    return stackOfCard;
+  }
 }
-
 
 export default CardDeck;
