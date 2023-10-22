@@ -1,6 +1,12 @@
 import React from 'react';
 
-const card = ({rank, suit, suitName}) => {
+interface Props {
+  rank: string;
+  suit: string;
+  suitName:string;
+}
+
+const card: React.FC<Props> = ({rank, suit, suitName}) => {
   return (
     <span className={`card rank-${rank} ${suitName}`}>
       <span className="rank">{rank}</span>
