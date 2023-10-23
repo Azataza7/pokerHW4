@@ -17,7 +17,8 @@ class CardDeck {
 
   getCard(): Card {
     if (this.deckOfCards.length === 0) {
-      return
+      console.log('no cards in cardDeck')
+      return;
     }
 
     const randomIndex = Math.floor(Math.random() * this.deckOfCards.length);
